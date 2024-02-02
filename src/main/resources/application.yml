@@ -1,0 +1,47 @@
+
+server:
+   port: 8082
+   servlet:
+      context-path: /customer-service/api
+
+springdoc:
+   api-docs:
+      path: /api-docs
+
+spring:
+   main:
+      allow-bean-definition-overriding: true
+   datasource:
+      platform: postgres
+      url: jdbc:postgresql://localhost:5432/bs-customer
+      username: postgres
+      password: postgres
+   jpa:
+      database: POSTGRESQL
+      hibernate:
+         ddl-auto: update
+         show-sql: true
+   application: 
+      name: customer-service
+         
+logging:
+   file:
+      name: /home/indianic/bookstore/logs/customer-service.log
+
+         
+spring.liquibase.enabled: false
+
+book.image.upload.path: /src/main/resources/images
+
+api.secret-key: B@@k$t@rE_2023
+
+---
+
+spring:
+   config:
+      activate:
+         on-profile: default
+logging:
+   file:
+      name: /home/indianic/bookstore/logs/customer-service.log
+      
